@@ -9,20 +9,22 @@ namespace Framework.Base
     public class BasePerson : Framework.Interface.IPerson
     {
         #region [- ctor -]
-        public BasePerson(int nationalCode, string name, string surname)
+        public BasePerson(string name, string surname, string nationalCode,string mobileNumber,string title)
         {
-            NationalCode = nationalCode;
             Name = name;
             Surname = surname;
+            NationalCode = nationalCode;
+            MobileNumber = mobileNumber;
+            Title = title;
         }
         #endregion
 
         #region [- Props -]
-        public int NationalCode { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
-
-        public virtual string FullInfo => string.Format("{0} {1} {2}", NationalCode, Name, Surname);
+        public string NationalCode { get; set; }
+        public string MobileNumber { get; set; }
+        public string Title { get; set; }
         #endregion
     }
 }
